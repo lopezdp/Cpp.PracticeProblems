@@ -25,9 +25,6 @@ class Doctor : public Person
         Doctor(string aSpec, string lastN, string firstN);
         ~Doctor();
     
-        //setters
-        void setSpecialty();
-    
         //getters
         string getSpecialty() { return dSpec; }
 };
