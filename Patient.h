@@ -9,30 +9,38 @@
 #ifndef Patient_H
 #define Patient_H
 
-#include "Person.h"
 #include <iostream>
 #include <string>
+#include "Person.h"
 
 using namespace std;
 
 class Patient : public Person
 {
-private:
-    string patientID;
-    string dob;
-    string attendingPhysician;
-    string dateAdmittedToHospital;
+    private:
+        string patientID;
+        string dob;
+        string attendingPhysician;
+        string dateAdmittedToHospital;
     
-public:
-    Patient();
-    Patient(string patientID, string dob, string attendingPhysician, string dateAdmittedToHospital, string lastN, string firstN);
-    ~Patient();
+    public:
+        Patient();
+        Patient(string patientID, string dob, string attendingPhysician, string dateAdmittedToHospital, string lastN, string firstN);
+        ~Patient();
     
-    //getters
-    string getPatientID() { return patientID; }
-    string getDob() { return dob; }
-    string getAttendingDr() { return attendingPhysician; }
-    string getAdmissionDate() { return dateAdmittedToHospital; }
+        //getters
+        string getPatientID() const { return patientID; }
+        string getDob() const { return dob; }
+        string getAttendingDr() const { return attendingPhysician; }
+        string getAdmissionDate() const { return dateAdmittedToHospital; }
+    
+        //setters
+        void setPatientID(string patientID);
+        void setDob(string dob);
+        void setAttendingDr(string attendingPhysician);
+        void setAdmissionDate(string dateAdmittedToHospital);
+    
+        void setPatName(string lastN, string firstN);
 };
 
 #endif
