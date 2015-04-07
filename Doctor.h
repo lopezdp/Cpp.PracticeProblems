@@ -18,15 +18,19 @@ using namespace std;
 class Doctor : public Person
 {
     private:
-        string dSpec;
+        string dSpec;//doctor specialty
     
     public:
         Doctor();
-        Doctor(string aSpec, string lastN, string firstN);
+        Doctor(string dSpec, string lastN, string firstN);
         ~Doctor();
     
         //getters
-        string getSpecialty() { return dSpec; }
+        string getSpecialty() const { return dSpec; } // gets a doctor's specialty
+    
+        //setters
+        void setSpecialty(string dSpec);
+        void setDrName(string lastN, string firstN);
 };
 
 #endif
