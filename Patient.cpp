@@ -20,3 +20,28 @@ Patient::~Patient()
 {
     cout << "Inside of Patient Destructor" << endl;
 }
+
+void Patient::setPatientID(string patientID)
+{
+    this->patientID = patientID;
+}
+
+void Patient::setDob(string dob)
+{
+    this->dob = dob;
+}
+
+void Patient::setAttendingDr(string attendingPhysician)
+{
+    this->attendingPhysician = attendingPhysician;
+}
+
+void Patient::setAdmissionDate(string dateAdmittedToHospital)
+{
+    this->dateAdmittedToHospital = dateAdmittedToHospital;
+}
+
+void Patient::setPatName(string lastN, string firstN)
+{
+    Person::setName(lastN, firstN);
+}
