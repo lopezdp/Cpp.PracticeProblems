@@ -18,21 +18,20 @@ class Person
 {
     private:
         //instance variables of the person class
-        string fName;
-        string lName;
+        string lastN;
+        string firstN;
     
     public:
         //constructors
         Person();
-        Person(string lastN, string firstN);
+        Person(string lastN, string firstN);//initialize an object by passing two string for last, first names
         ~Person();
     
-        //setters
-        void setName(string last, string first);
-    
         //getters
-        string getName(){ return lName + fName; };
+        string getName() const { return lastN + ", " + firstN; }; //gets the name of the person
     
+        //setters
+        void setName(string lastN, string firstN);
 };
 
 #endif
