@@ -20,6 +20,15 @@ HospitalCharges::HospitalCharges(double pharmacyCharges, double doctorFees, doub
     this->roomCharges = roomCharges;
     this->xRayCharges = xRayCharges;
 }
+
+void HospitalCharges::print() const
+{
+    cout << "Pharmacy Charges: " << pharmacyCharges;
+    cout << "Doctor Fees: " << doctorFees;
+    cout << "Room Charges: " << roomCharges;
+    cout << "x-Ray Charges: " << xRayCharges;
+}
+
 HospitalCharges::~HospitalCharges()
 {
     cout << "Inside of Default Constructor" << endl;
