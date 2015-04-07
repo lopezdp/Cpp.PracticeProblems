@@ -14,17 +14,24 @@ Person::Person()
     cout << "Inside default constructor" << endl;
 }
 
-
 Person::Person(string lastN, string firstN)
 {
     //Overriden Person Constructor
     cout << "Inside Overriden Person Constructor" << endl;
-    lName = lastN;
-    fName = firstN;
+    this->lastN = lastN;
+    this->firstN = firstN;
 }
 
 Person::~Person()
 {
     cout << "Inside Person Destructor..." << endl;
 }
+
+void Person::setName(string lastN, string firstN)
+{
+    this->lastN = lastN;
+    this->firstN = firstN;
+}
+
+
 
