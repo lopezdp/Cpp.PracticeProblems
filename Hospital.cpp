@@ -8,19 +8,19 @@
 
 #include "Hospital.h"
 
-Hospital::Hospital()
-{
-    cout << "Default Constructor" << endl;
-}
-
-Hospital::Hospital(string hospitalName, string hospitalURL, string hospitalTelephoneNumber)
+Hospital::Hospital(string hospitalName, string hospitalURL, string hospitalTelephoneNumber, int numDocs, int numPats)
 {
     this->hospitalName = hospitalName;
     this->hospitalURL = hospitalURL;
     this->hospitalTelephoneNumber = hospitalTelephoneNumber;
+    
+    Hospital::createDocArr(numDocs);
+    Hospital::createDocArr(numPats);
 }
 
 Hospital::~Hospital()
 {
     cout << "Buldozing the Hospital" << endl;
+    delete [] ptrDoctors;
+    delete [] ptrPatients;
 }
