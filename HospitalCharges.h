@@ -28,10 +28,13 @@ public:
     ~HospitalCharges();
     
     //getters
-    double getPharmCharge() {return pharmacyCharges;};
-    double getDocFees() {return doctorFees;};
-    double getRmCharge() {return roomCharges;};
-    double getXRayCharge() {return xRayCharges;};
+    double getPharmCharge() const {return pharmacyCharges;};
+    double getDocFees() const {return doctorFees;};
+    double getRmCharge() const {return roomCharges;};
+    double getXRayCharge() const {return xRayCharges;};
+    
+    //print function
+    void print() const;
 };
 
 #endif
