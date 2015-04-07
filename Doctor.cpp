@@ -8,12 +8,22 @@
 
 #include "Doctor.h"
 
-Doctor::Doctor(string aSpec, string lastN, string firstN) : Person(lastN, firstN)
+Doctor::Doctor(string dSpec, string lastN, string firstN) : Person(lastN, firstN)
 {
-    dSpec = aSpec;
+    this->dSpec = dSpec;
 }
 
 Doctor::~Doctor()
 {
     cout << "Inside of Doctor Destructor" << endl;
+}
+
+void Doctor::setSpecialty(string dSpec)
+{
+    this->dSpec = dSpec;
+}
+
+void Doctor::setDrName(string lastN, string firstN) 
+{
+    Person::setName(lastN, firstN);
 }
