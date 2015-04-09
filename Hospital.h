@@ -83,12 +83,13 @@ private:
             cin >> temp2;
             ptrPatients[i].setPatName(temp1, temp2);
             
+            getline(cin,temp1,'\n');
             cout << "What is Patient " << i+1 << "'s date of birth? ";
             getline(cin,temp1);
             ptrPatients[i].setDob(temp1);
             
-            getline(cin,temp2);
-            cout << "Who is Patient " << i+1 << "'s Doctor?";
+            getline(cin,temp2,'\n');
+            cout << "Who is Patient " << i+1 << "'s Doctor? ";
             getline(cin,temp1);
             ptrPatients[i].setAttendingDr(temp1);
             
@@ -97,19 +98,27 @@ private:
             getline(cin,temp1);
             ptrPatients[i].setAdmissionDate(temp1);
             cout << endl;
-    
+            
+            do{
             cout << "How much does the Patient owe in pharmacy charges? ";
             cin >> pharmCharge;
+            }while(pharmCharge <= 0);
             
+            do{
             cout << "How much does the Patient owe in Doctor fees? ";
             cin >> docFees;
+            }while(docFees <= 0);
             
+            do{
             cout << "How much does the Patient owe in room charges? ";
             cin >> rmCharge;
+            }while(rmCharge <= 0);
             
+            do{
             cout << "How much does the Patient owe in x-Ray charges? ";
             cin >> xRayCharge;
             cout << endl;
+            }while(xRayCharge <= 0);
             
             ptrBill[i] = HospitalBill(hospitalName, ptrPatients[i].getPatientID(), pharmCharge , docFees, rmCharge, xRayCharge);
         }
