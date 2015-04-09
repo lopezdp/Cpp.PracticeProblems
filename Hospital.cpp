@@ -6,21 +6,61 @@
 //  Copyright (c) 2015 David P. Lopez. All rights reserved.
 //
 
+#include <iomanip>
 #include "Hospital.h"
 
 Hospital::Hospital(string hospitalName, string hospitalURL, string hospitalTelephoneNumber, int numDocs, int numPats)
-{
+{   
     this->hospitalName = hospitalName;
     this->hospitalURL = hospitalURL;
     this->hospitalTelephoneNumber = hospitalTelephoneNumber;
     
     Hospital::createDocArr(numDocs);
-    Hospital::createDocArr(numPats);
+    Hospital::createPatArr(numPats, hospitalName);
 }
 
 Hospital::~Hospital()
 {
     cout << "Buldozing the Hospital" << endl;
+
     delete [] ptrDoctors;
     delete [] ptrPatients;
+    delete [] ptrBill;
+}
+
+void Hospital::printDocs()
+{
+    cout << endl;
+    cout << "This is the list of Doctors at: " << hospitalName << " Hospital" << endl;
+    cout << setfill('=') << setw(41 + hospitalName.length()) << "=" << endl;
+    cout << endl;
+    
+    for(int i = 0; i < Hospital::numDoctors; i++)
+    {
+        cout << "Doctor #" << i+1 <<"'s Name is: " << ptrDoctors[i].Doctor::getName() << endl;
+        cout << "Doctor #" << i+1 <<"'s Specialty is: " << ptrDoctors[i].Doctor::getSpecialty() << endl;
+        cout << endl;
+    }
+}
+
+void Hospital::printPats()
+{
+    cout << "This is the list of Patients at: " << hospitalName << " Hospital" << endl;
+    cout << setfill('=') << setw(42 + hospitalName.length()) << "=" << endl;
+    cout << endl;
+    
+    for(int i = 0; i < Hospital::numPatients; i++)
+    {
+        cout << "Patient #" << i+1 <<"'s Name is: " << ptrPatients[i].Patient::getName() << endl;
+        cout << "Patient #" << i+1 <<"'s Patient ID is: " << ptrPatients[i].Patient::getPatientID() << endl;
+        cout << "Patient #" << i+1 <<"'s Date of Birth is: " << ptrPatients[i].Patient::getDob() << endl;
+        cout << "Patient #" << i+1 <<"'s Attending Physician is: " << ptrPatients[i].Patient::getAttendingDr() << endl;
+        cout << "Patient #" << i+1 <<"'s Admission Date was: " << ptrPatients[i].Patient::getAdmissionDate() << endl;
+        cout << endl;
+        
+        cout << "This is the Hospital Bill for Patient: " << ptrPatients[i].Patient::getName() << endl;
+        cout << setfill('=') << setw(39 + ptrPatients[i].Patient::getName().length()) << "=" << endl;
+        ptrBill[i].HospitalBill::print();
+        cout << endl;
+    }
 }
