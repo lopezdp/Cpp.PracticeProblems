@@ -10,7 +10,7 @@
 
 HospitalCharges::HospitalCharges()
 {
-    cout << "Inside of Default Constructor" << endl;
+    cout << "Inside of HospitalCharges Constructor" << endl;
 }
 
 HospitalCharges::HospitalCharges(double pharmacyCharges, double doctorFees, double roomCharges, double xRayCharges)
@@ -21,16 +21,16 @@ HospitalCharges::HospitalCharges(double pharmacyCharges, double doctorFees, doub
     this->xRayCharges = xRayCharges;
 }
 
-void HospitalCharges::print() const
+void HospitalCharges::printCharges() const
 {
-    cout << "Pharmacy Charges: " << pharmacyCharges;
-    cout << "Doctor Fees: " << doctorFees;
-    cout << "Room Charges: " << roomCharges;
-    cout << "x-Ray Charges: " << xRayCharges;
+    cout << "Pharmacy Charges: " << pharmacyCharges << endl;
+    cout << "Doctor Fees: " << doctorFees << endl;
+    cout << "Room Charges: " << roomCharges << endl;;
+    cout << "x-Ray Charges: " << xRayCharges << endl;;
 }
 
 HospitalCharges::~HospitalCharges()
 {
-    cout << "Inside of Default Constructor" << endl;
+    cout << "Inside of HospitalCharges Destructor" << endl;
 }
 
