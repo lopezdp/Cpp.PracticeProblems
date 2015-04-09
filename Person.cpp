@@ -11,7 +11,7 @@
 Person::Person()
 {
     //constructor
-    cout << "Inside default constructor" << endl;
+    cout << "Inside Person Constructor..." << endl;
 }
 
 Person::Person(string lastN, string firstN)
@@ -25,6 +25,7 @@ Person::Person(string lastN, string firstN)
 Person::~Person()
 {
     cout << "Inside Person Destructor..." << endl;
+
 }
 
 void Person::setName(string lastN, string firstN)
