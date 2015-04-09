@@ -32,12 +32,17 @@ int main() {
     cout << "What is the Hospital's telephone number? ";
     cin >> phone;
     
-    cout << "How many Doctor's work at this Hospital? ";
-    cin >> numDocs;
+
+    do{
+        cout << "How many Doctor's work at this Hospital? ";
+        cin >> numDocs;
+    }while(numDocs <= 0);
     
-    cout << "How many patients is this hospital currently serving? ";
-    cin >> numPats;
-    cout << endl;
+    do{
+        cout << "How many patients is this hospital currently serving? ";
+        cin >> numPats;
+        cout << endl;
+    }while(numPats <= 0);
 
     //Create Hospital and Person Objects that work & reside inside the hospital
     Hospital newHospital(hospitalName, url, phone, numDocs, numPats);
