@@ -8,6 +8,13 @@
 
 #include "Doctor.h"
 
+Doctor::Doctor()
+{
+    //constructor
+    cout << "Inside Doctor Constructor..." << endl;
+}
+
+
 Doctor::Doctor(string dSpec, string lastN, string firstN) : Person(lastN, firstN)
 {
     this->dSpec = dSpec;
@@ -27,3 +34,5 @@ void Doctor::setDrName(string lastN, string firstN)
 {
     Person::setName(lastN, firstN);
 }
+
+
