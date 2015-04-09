@@ -34,7 +34,7 @@ public:
     double getXRayCharge() const {return xRayCharges;};
     
     //print function
-    void print() const;
+    void printCharges() const;
 };
 
 #endif
