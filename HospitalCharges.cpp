@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 David P. Lopez. All rights reserved.
 //
 
+#include <iomanip>
 #include "HospitalCharges.h"
 
 HospitalCharges::HospitalCharges()
@@ -23,10 +24,11 @@ HospitalCharges::HospitalCharges(double pharmacyCharges, double doctorFees, doub
 
 void HospitalCharges::printCharges() const
 {
-    cout << "Pharmacy Charges: " << pharmacyCharges << endl;
-    cout << "Doctor Fees: " << doctorFees << endl;
-    cout << "Room Charges: " << roomCharges << endl;;
-    cout << "x-Ray Charges: " << xRayCharges << endl;;
+    cout << fixed << showpoint << setprecision(2);
+    cout << setfill(' ') << setw(10) << "" << "Pharmacy Charges: " << "$" << pharmacyCharges << endl;
+    cout << setfill(' ') << setw(10) << "" << "Doctor Fees: " << setw(7) << "$" << doctorFees << endl;
+    cout << setfill(' ') << setw(10) << "" << "Room Charges: " << setw(7) << "$" << roomCharges << endl;;
+    cout << setfill(' ') << setw(10) << "" << "x-Ray Charges: " << setw(6) << "$" << xRayCharges << endl;;
 }
 
 HospitalCharges::~HospitalCharges()
