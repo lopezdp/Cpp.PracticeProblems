@@ -8,6 +8,12 @@
 
 #include "Patient.h"
 
+Patient::Patient()
+{
+    //constructr
+    cout << "Inside Patient Constructor..." << endl;
+}
+
 Patient::Patient(string patientID, string dob, string attendingPhysician, string dateAdmittedToHospital, string lastN, string firstN) : Person(lastN, firstN)
 {
     this->patientID = patientID;
@@ -18,9 +24,11 @@ Patient::Patient(string patientID, string dob, string attendingPhysician, string
 
 Patient::~Patient()
 {
+    //destructor
     cout << "Inside of Patient Destructor" << endl;
 }
 
+//setters
 void Patient::setPatientID(string patientID)
 {
     this->patientID = patientID;
@@ -45,3 +53,5 @@ void Patient::setPatName(string lastN, string firstN)
 {
     Person::setName(lastN, firstN);
 }
+
+
