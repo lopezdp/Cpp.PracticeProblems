@@ -1,0 +1,66 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+
+	int input1, input2, diff;
+	string e = "even";
+	string o = "odd";
+	string numStr[10] = { "Greater than 9", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+
+	cout << "Enter input now: ";
+
+	cin >> input1
+	cin >> input2;
+	
+	diff = input2 - input1;
+	
+	int loopInt = input1;
+	
+	for(int i = 0; i <= diff; i++)
+	{
+		//loop
+		if(input1 <= 9 && input2 <= 9)
+		{
+			cout << numStr[loopInt] << endl;
+			loopInt++;
+		}
+		else if(input1 <= 9 && input2 > 9)
+		{
+			if(loopInt <= 9)
+			{
+				cout << numStr[loopInt] << endl;
+				loopInt++;
+			}
+			else
+			{
+				if(loopInt % 2 == 0)
+				{
+					cout << e << endl;
+				}
+				else
+				{
+					cout << o << endl;
+				}
+				loopInt++;
+			}
+		}
+		else
+		{
+			if(loopInt % 2 == 0)
+				{
+					cout << e << endl;
+				}
+				else
+				{
+					cout << o << endl;
+				}
+				loopInt++;
+		}
+	}
+	return 0;
+}
+
